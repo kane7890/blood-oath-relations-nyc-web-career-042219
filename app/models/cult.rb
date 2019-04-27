@@ -32,13 +32,19 @@ class Cult
   end
 
   def self.find_by_location(location)
-    @@all.each {|cult|
-      cult.location == location}
+    returnval=@@all.select do |cult|
+
+      cult.location == location
+
+
+    end
+    binding.pry
+    returnval
   end
 
   def self.find_by_founding_year(year)
 
-    @@all.each {|cult|
+    @@all.map {|cult|
       cult.year == year}
 
   end
@@ -71,16 +77,19 @@ class Cult
   def self.most_common_location
     max_count =0
     most_common_location = ""
-    locationarray=@@all.each do |cult|
+    locationarray=@@all.map do |cult|
       cult.location
-    end
-    binding.pry
-    locationarray=locationarray.compact
+    end.uniq
+
+  #  binding.pry
     locationarray.each do |location|
-      if max_count < self.find_by_location(location).length
-        max_count = self.find_by_location(location).length
+      loclength = self.find_by_location(location).length
+      binding.pry
+      if max_count < loclength
+        max_count = loclength
         most_common_location = location
       end
+
     end
     most_common_location
   end

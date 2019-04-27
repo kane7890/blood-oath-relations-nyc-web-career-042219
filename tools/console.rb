@@ -48,7 +48,11 @@ maria.join_cult(rome_cult)
 ned.join_cult(rome_cult)
 oscar.join_cult(jt_cult)
 
-Cult.most_common_location
+
+puts "NY Cults are #{Cult.find_by_location("New York")}"
+
+puts "MCL is #{Cult.most_common_location}"
+
 
 binding.pry
 
