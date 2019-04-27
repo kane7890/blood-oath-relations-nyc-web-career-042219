@@ -4,7 +4,7 @@ def reload
   load 'config/environment.rb'
 end
 require 'date'
-puts "what the fuck"
+# puts "what the fuck"
 
 # Insert code here to run before hitting the binding.pry
 # This is a convenient place to define variables and/or set up new object instances,
@@ -28,9 +28,9 @@ oscar = Follower.new("Oscar", 40, "DC Listener")
 
 # aaron = Follower.new ("Aaron", 25, "McCarthy Sucks")
 # aaron = Follower.new ("Aaron", 25, "McCarthy Sucks")
-zaun_cult=Cult.new("Zaun", "New York", "Mikey Forever")
-rome_cult=Cult.new("Rome", "SoCal", "Have a Take Don't Suck")
-jt_cult=Cult.new("JT", "SoCal", "First SmackOff Winner")
+zaun_cult=Cult.new("Zaun", "New York", "Mikey Forever", 1989)
+rome_cult=Cult.new("Rome", "SoCal", "Have a Take Don't Suck", 1995)
+jt_cult=Cult.new("JT", "SoCal", "First SmackOff Winner", 1999)
 
 aaron.join_cult(zaun_cult)
 ben.join_cult(zaun_cult)
@@ -44,9 +44,11 @@ irene.join_cult(zaun_cult)
 jennifer.join_cult(zaun_cult)
 karen.join_cult(zaun_cult)
 lewis.join_cult(zaun_cult)
+lewis.join_cult(rome_cult)
 maria.join_cult(rome_cult)
 ned.join_cult(rome_cult)
 oscar.join_cult(jt_cult)
+
 
 
 puts "NY Cults are #{Cult.find_by_location("New York")}"

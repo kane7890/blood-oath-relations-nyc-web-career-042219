@@ -4,14 +4,19 @@ class BloodOath
   @@all=[]
 
   def initialize(follower, cult, init_date)
-    @follower = follower
     @cult = cult
+    @follower = follower
+
     @init_date = init_date
     @@all << self
   end
 
   def self.all
     @@all
+  end
+
+  def initiation_date
+    @init_date.to_s
   end
 
 end

@@ -1,7 +1,7 @@
 
 class Follower
 
-  attr_reader :name, :age, :life_motto, :cults
+  attr_reader :name, :age, :life_motto
 
   @@all = []
 
@@ -10,12 +10,23 @@ class Follower
     @age = age
     @life_motto = life_motto
     @@all << self
-    @cults = []
+    # @cults = []
   end
+
+  def cults
+    cultlist=[]
+    BloodOath.all.each do |oath|
+      if oath.follower == self
+        cultlist << oath.cult
+      end
+    end
+    cultlist
+  end
+
 
   def join_cult(cult)
     BloodOath.new(self, cult,Date.today)
-    @cults << cult
+
   end
 
   def self.all
@@ -25,7 +36,7 @@ class Follower
   def self.of_a_certain_age(certain_age)
 
     agearray=[]
-    @@all.select {|follower| follower.age > certain_age}
+    @@all.select {|follower| follower.age >= certain_age}
   end
 
   def my_cults_slogans
