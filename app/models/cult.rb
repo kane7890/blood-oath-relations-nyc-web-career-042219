@@ -32,14 +32,10 @@ class Cult
   end
 
   def self.find_by_location(location)
-    returnval=@@all.select do |cult|
+    @@all.select do |cult|
 
       cult.location == location
-
-
     end
-    binding.pry
-    returnval
   end
 
   def self.find_by_founding_year(year)
