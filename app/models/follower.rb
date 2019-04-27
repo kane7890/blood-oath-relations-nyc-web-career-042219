@@ -51,7 +51,10 @@ class Follower
             max_cult_count = follower.cults.length
           follower_mostactive=follower
           end
+
       end
+      binding.pry
+      follower_mostactive
     end
 
 
