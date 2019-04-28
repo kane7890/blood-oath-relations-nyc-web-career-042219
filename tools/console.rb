@@ -1,5 +1,6 @@
 require_relative '../config/environment.rb'
 
+
 def reload
   load 'config/environment.rb'
 end
@@ -57,8 +58,11 @@ puts "NY Cults are #{Cult.find_by_location("New York")}"
 
 puts "MCL is #{Cult.most_common_location}"
 puts "top ten:"
-Follower.top_ten
+puts "#{Follower.top_ten}"
 
+newbludoath=BloodOath.new(oscar, rome_cult, Date.new(2018,4,27))
+
+puts "First oath was follower: #{BloodOath.first_oath.name}"
 binding.pry
 
 
