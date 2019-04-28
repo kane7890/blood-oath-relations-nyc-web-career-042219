@@ -45,7 +45,9 @@ jennifer.join_cult(zaun_cult)
 karen.join_cult(zaun_cult)
 lewis.join_cult(zaun_cult)
 lewis.join_cult(rome_cult)
+lewis.join_cult(jt_cult)
 maria.join_cult(rome_cult)
+maria.join_cult(zaun_cult)
 ned.join_cult(rome_cult)
 oscar.join_cult(jt_cult)
 
@@ -54,7 +56,8 @@ oscar.join_cult(jt_cult)
 puts "NY Cults are #{Cult.find_by_location("New York")}"
 
 puts "MCL is #{Cult.most_common_location}"
-
+puts "top ten:"
+Follower.top_ten
 
 binding.pry
 

@@ -57,6 +57,25 @@ class Follower
       follower_mostactive
     end
 
+  def self.top_ten
+    cult_hash_array=[]
+    follower_mostactive = ""
+    @@all.each do |follower|
+            hash_elem={follower.cults.length=>follower.name}
+            cult_hash_array << hash_elem
+            # binding.pry
+          end
+     cultarray_rev=cult_hash_array.sort {|a, b| a.keys<=>b.keys}.reverse.slice(0,10)
+     index=0
+
+
+     binding.pry
+
+    cultarray_rev
+
+
+  end
+
 
 
 
