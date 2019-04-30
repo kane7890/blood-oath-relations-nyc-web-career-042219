@@ -59,7 +59,7 @@ class Follower
 
   def self.top_ten
     cult_hash_array=[]
-    follower_mostactive = ""
+    # follower_mostactive = ""
     @@all.each do |follower|
             hash_elem={follower.cults.length=>follower.name}
             cult_hash_array << hash_elem
